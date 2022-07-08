@@ -1,0 +1,28 @@
+{% extends 'main/wrapper.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/detail-folder/clients_detail.css' %}">
+    <a href="/" class="clients-detail-return-button"><img src="{% static 'icons/back.svg' %}" class="clients-detail-return-button-icon"></a>
+    <div class="clients-detail-div">
+        <div class="clients-detail-info-div">
+            <h1 class="clients-detail-name">{{ object.name }}</h1>
+            <h1 class="clients-detail-phone">{{ object.phone }}</h1>
+        </div>
+        <div class="clients-detail-books-div">
+            <h1 class="clients-detail-books-label">Книги y клієнта</h1>
+            <table class="clients-detail-books-list-div">
+                <tr class="clients-detail-table-labels">
+                    <th class="clients-detail-table-labels-name">Title</th>
+                    <th class="clients-detail-table-labels-author">Author</th>
+                </tr>
+                {% for book in object.books.all %}
+                <tr class="clients-detail-table-data">
+                    <td class="clients-detail-books-title">{{ book.title }}</td>
+                    <td class="clients-detail-books-author">{{ book.author }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+.history-page-main-div {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid #aaa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*HISTORY FORM PART*/
+.history-filter-data-form{
+    width: 600px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*HOSTORY DATA DISPLAYING PART*/
+
+.history-objects-list-div {
+    width: 99vw;
+    height: 85vh;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.history-list-object {
+    width: 90%;
+    height: auto;
+    margin: 10px;
+    border: 2px solid #aaa;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.operation-status {
+    transform: translate(25%, 25%);
+    width: 15px;
+    height: 15px;
+}
+
+.history-oper-data {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+/*RETURN BUTTON*/
+.history_page-return-button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.history_page-return-button-icon {
+    transform: scale(70%);
+}

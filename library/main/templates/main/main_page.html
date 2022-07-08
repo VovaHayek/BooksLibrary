@@ -1,0 +1,69 @@
+{% extends 'main/wrapper.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+	<a href="/history/" class="histary-page-url-button"><h3>History</h3></a>
+<!--SEARCHING BOOKS-->
+	<div class="books-div">
+		<div class="books-form">
+			<input type="text" name="search_books" id="sf" class="books-form-search-bar">
+			<button id="search-books-submit" class="books-form-submit-button">Search books</button>
+		</div>
+		<div id="search-books-results-hide" class="books-results-div">
+			{% for book in books %}
+				<div id="search_books_data" class="books-result-container">
+					<a href="books/{{book.id}}"><h3>"{{book.title}}" - {{book.author}}</h3></a>
+				</div>
+			{% endfor %}
+		</div>
+		<div id="search-books-results-display" class="books-results-div"></div>
+	</div>
+
+<!--SEARCHING CLIENTS-->
+	<div class="clients-div">
+		<div class="clients-form">
+			<input type="text" id="search-clients-bar" class="clients-form-search-bar" name="search_clients">
+			<button id="search-clients-submit" class="clients-form-submit-button">Search clients</button>
+		</div>
+		<div id="search-clients-results-hide" class="clients-results-div">
+			{% for client in clients %}
+				<div class="clients-result-container">
+					<a href="clients/{{client.id}}"><h3>"{{client.name}}" - {{client.phone}}</h3></a>
+				</div>
+			{% endfor %}
+		</div>
+		<div id="search-clients-results-display" class="clients-results-div"></div>
+	</div>
+
+<!--ADD OPERATION-->
+	<div class="operations-div">
+		<form method="POST" class="operations-form">
+			{% csrf_token %}
+
+			<select name="books-select" id="operation-books-select">
+					<option value="None">Choose Books...</option>
+				{% for book in books %}
+					<option value="{{book.id}}">{{book.title}}</option>
+				{% endfor %}
+			</select>
+
+			<select name="clients-select" id="operation-clients-select">
+					<option value="None">Choose Client...</option>
+				{% for client in clients %}
+					<option value="{{client.name}}">{{client.name}}</option>
+				{% endfor %}
+			</select>
+
+			<select name="actions-select" id="operations-actions-select">
+					<option value="None">Choose Action...</option>
+				{% for action in actions %}
+					<option value="{{action.id}}">{{action.action_name}}</option>
+				{% endfor %}
+			</select>
+
+			<input type="submit" name="operations-form-submit">
+		</form>
+	</div>
+{% endblock %}

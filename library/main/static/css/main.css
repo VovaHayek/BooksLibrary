@@ -1,0 +1,165 @@
+body {
+    background-color: #eee;
+}
+
+a {
+    font-family: sans-serif;
+    text-decoration-line: none;
+    color: #000;
+
+}
+
+/*BOOKS FORM PART*/
+.books-div {
+    width: 20%;
+    height: 500px;
+    border: 2px solid #666;
+    border-radius: 5px;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    transform: translate(-10%, -30%);
+    display: flex;
+    flex-direction: column;
+}
+
+/*SEARCHING BOOKS FORM PART*/
+.books-form {
+    width: initial;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.books-form-search-bar {
+    width: 96%;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.books-form-submit-button {
+    width: 30%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px 1px #666;
+}
+
+/*RESULTS DIV PART*/
+.books-results-div {
+    width: initial;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.books-result-container {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 94%;
+    min-height: 60px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px 1px #666;
+    text-align: center;
+}
+
+/*CLIENTS FORM PART*/
+.clients-div {
+    width: 20%;
+    height: 500px;
+    border: 2px solid #666;
+    border-radius: 5px;
+    position: absolute;
+    top: 30%;
+    left: 90%;
+    transform: translate(-90%, -30%);
+    display: flex;
+    flex-direction: column;
+}
+
+.clients-form {
+    width: initial;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.clients-form-search-bar {
+    width: 96%;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.clients-form-submit-button {
+    width: 30%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px 1px #666;
+}
+
+/*RESULTS DIV PART*/
+.clients-results-div {
+    width: initial;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clients-result-container {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 94%;
+    min-height: 60px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px 1px #666;
+    text-align: center;
+}
+
+/*OPERATIONS FORM*/
+
+.operations-div {
+    width: 30%;
+    height: 600px;
+    border: 2px solid #666;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.operations-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.operations-form select {
+    width: 90%;
+    height: 50px;
+}
+
+.operations-form input {
+    width: 50%;
+    height: 55px;
+
+}

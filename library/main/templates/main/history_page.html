@@ -1,0 +1,42 @@
+{% extends "main/wrapper.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/history.css' %}">
+
+<div class="history-page-main-div">
+    <a href="/" class="history-page-return-button"><img src="{% static 'icons/back.svg' %}" class="history-page-return-button-icon"></a>
+    <form method="GET" class="history-filter-data-form">
+        <select name="by_order" class="history_ordering_filter">
+            <option value="">Choose ordering...</option>
+            <option value="older">From newer</option>
+            <option value="newer">from older</option>
+        </select>
+        <input type="date" name="history-date-filter">
+        <input type="text" name="searchBar" id="history-search-bar-filter" placeholder="Search...">
+        <button id="history-page-submit-btn"><h2>Submit</h2></button>
+    </form>
+    <div>
+        <div class="history-label-objects-div">
+
+        </div>
+        <div class="history-objects-list-div" id="history-objects-display-div">
+            {% for operation in operations %}
+                    <div class="history-list-object">
+                        {% if "Take" in operation.options.action_name %}
+                            <img src="{% static 'icons/green.png' %}" class="operation-status">
+                        {% elif "Return" in operation.options.action_name %}
+                            <img src="{% static 'icons/red.png' %}" class="operation-status">
+                        {% endif %}
+                        <div class="history-oper-data"><h3 class="history-list-object-operation-name">{{ operation.options.action_name }}</h3></div>
+                        <div class="history-oper-data"><h3 class="history-list-object-operation-name">{{ operation.book.title }}</h3></div>
+                        <div class="history-oper-data"><h3 class="history-list-object-operation-name">{{ operation.client.name }}</h3></div>
+                        <div class="history-oper-data"><h3 class="history-list-object-operation-name">{{ operation.time_of_operation }}</h3></div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'js/history_page.js' %}"></script>
+{% endblock %}
